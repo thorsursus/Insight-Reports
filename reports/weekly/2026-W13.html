@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Consulting Intelligence — Week 13, 2026</title>
+<style>
+  /* ============================================================
+     KNOWIT INSIGHT — Weekly Intelligence Report
+     Brand: Dark green #1A3C34, Coral #E8644A, Warm white #FAF8F5
+     ============================================================ */
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+
+  :root {
+    --knowit-green: #1A3C34;
+    --knowit-green-deep: #0F2820;
+    --knowit-green-light: #2A5C4E;
+    --knowit-green-muted: #3D7A6A;
+    --knowit-coral: #E8644A;
+    --knowit-coral-light: #F0856E;
+    --knowit-coral-soft: #FFF0EC;
+    --knowit-warm: #FAF8F5;
+    --knowit-cream: #F5F0EA;
+    --knowit-sand: #E8E0D6;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5A5A5A;
+    --text-light: #8A8A8A;
+    --text-on-dark: #F0EDE8;
+    --border-light: #E8E0D6;
+    --shadow-sm: 0 1px 3px rgba(26,60,52,0.06);
+    --shadow-md: 0 4px 16px rgba(26,60,52,0.08);
+    --shadow-lg: 0 8px 32px rgba(26,60,52,0.12);
+    --shadow-xl: 0 16px 48px rgba(26,60,52,0.16);
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F2EFEB;
+    color: var(--text-primary);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === OUTER WRAPPER === */
+  .email-wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--knowit-warm);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* === HERO HEADER === */
+  .hero {
+    background: linear-gradient(155deg, var(--knowit-green-deep) 0%, var(--knowit-green) 40%, var(--knowit-green-light) 100%);
+    padding: 48px 52px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(232,100,74,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -30px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(232,100,74,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .logo-mark {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-mark span {
+    color: var(--knowit-coral);
+  }
+
+  .logo-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255,255,255,0.25);
+    margin: 0 14px;
+  }
+
+  .logo-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  .issue-badge {
+    background: rgba(232,100,74,0.2);
+    border: 1px solid rgba(232,100,74,0.3);
+    color: var(--knowit-coral-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  .logo-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lang-selector {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .lang-selector select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 6px 28px 6px 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .lang-selector select:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .lang-selector::after {
+    content: '▾';
+    position: absolute;
+    right: 10px;
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+  }
+
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hero-author {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
+  }
+
+  .author-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid rgba(232,100,74,0.6);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .author-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .author-role {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--knowit-coral);
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--knowit-coral-light);
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(240,237,232,0.75);
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 28px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-meta-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .hero-meta-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* === SIGNAL BAR === */
+  .signal-bar {
+    background: var(--knowit-green-deep);
+    padding: 20px 52px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 3px solid var(--knowit-coral);
+  }
+
+  .signal-bar-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--knowit-coral);
+    white-space: nowrap;
+  }
+
+  .signal-bar-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+  }
+
+  /* === MAIN CONTENT === */
+  .content {
+    padding: 48px 52px;
+  }
+
+  /* === EXECUTIVE SUMMARY === */
+  .exec-summary {
+    background: linear-gradient(135deg, var(--knowit-cream) 0%, var(--knowit-warm) 100%);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    margin-bottom: 48px;
+    border-left: 4px solid var(--knowit-coral);
+    position: relative;
+  }
+
+  .exec-summary::before {
+    content: '"';
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 72px;
+    color: var(--knowit-coral);
+    opacity: 0.2;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    line-height: 1;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--knowit-coral);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .exec-summary p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--knowit-green);
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* === SECTION HEADERS === */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    margin-top: 56px;
+  }
+
+  .section-header:first-child {
+    margin-top: 0;
+  }
+
+  .section-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--knowit-green);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--knowit-green);
+    line-height: 1.2;
+  }
+
+  /* === THEME DASHBOARD === */
+  .dashboard {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 40px;
+    border: 1px solid var(--border-light);
+  }
+
+  .dashboard-header {
+    background: var(--knowit-green);
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 2.8fr 0.8fr 0.8fr 0.6fr;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .dashboard-header span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .dashboard-row {
+    display: grid;
+    grid-template-columns: 2.8fr 0.8fr 0.8fr 0.6fr;
+    gap: 8px;
+    align-items: center;
+    padding: 7px 20px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .dashboard-row:nth-child(even) {
+    background: var(--knowit-warm);
+  }
+
+  .dashboard-row:last-child {
+    border-bottom: none;
+  }
+
+  .theme-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--knowit-green);
+    line-height: 1.2;
+  }
+
+  .theme-detail {
+    font-size: 10.5px;
+    color: var(--text-light);
+    margin-top: 1px;
+    line-height: 1.2;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .status-active {
+    background: rgba(26,60,52,0.1);
+    color: var(--knowit-green);
+  }
+
+  .status-emerging {
+    background: rgba(232,100,74,0.1);
+    color: var(--knowit-coral);
+  }
+
+  .signal-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .dot-strong { background: var(--knowit-green); }
+  .dot-moderate { background: var(--knowit-coral); }
+  .dot-weak { background: var(--knowit-sand); }
+
+  .trend-arrow {
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .trend-up { color: #2A8C5A; }
+  .trend-up-slight { color: #4BA67A; }
+  .trend-stable { color: var(--text-light); }
+  .trend-down-slight { color: #D4883E; }
+  .trend-down { color: #C0392B; }
+  .trend-new { color: var(--knowit-coral); }
+
+  .trend-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  /* === RADAR CHART === */
+  .radar-container {
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    padding: 28px 24px 20px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .radar-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+
+  .radar-svg {
+    max-width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .radar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .radar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+
+  .radar-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* === DEEP DIVE CARDS === */
+  .deep-dive {
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 28px;
+    border: 1px solid var(--border-light);
+  }
+
+  .deep-dive-header {
+    padding: 28px 32px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .deep-dive-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 20px;
+    color: var(--knowit-green);
+    line-height: 1.3;
+  }
+
+  .deep-dive-tags {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--knowit-coral-soft);
+    color: var(--knowit-coral);
+    white-space: nowrap;
+  }
+
+  .tag-green {
+    background: rgba(26,60,52,0.08);
+    color: var(--knowit-green);
+  }
+
+  .deep-dive-body {
+    padding: 20px 32px 28px;
+  }
+
+  .deep-dive-body p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .deep-dive-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .key-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .key-data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .key-data-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--knowit-green);
+    line-height: 1;
+  }
+
+  .key-data-number .accent {
+    color: var(--knowit-coral);
+  }
+
+  .key-data-label {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+
+  .knowit-callout {
+    background: linear-gradient(135deg, var(--knowit-green) 0%, var(--knowit-green-light) 100%);
+    margin: 20px 0 0;
+    padding: 18px 22px;
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .knowit-callout-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--knowit-coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+
+  .knowit-callout p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.9) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .knowit-callout strong {
+    color: #FFFFFF;
+  }
+
+  /* === NORDIC COMPARISON === */
+  .nordic-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .nordic-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .nordic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nordic-flag {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .nordic-city {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--knowit-green);
+    margin-bottom: 10px;
+  }
+
+  .nordic-detail {
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .nordic-highlight {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--knowit-coral-soft);
+    color: var(--knowit-coral);
+  }
+
+  /* === SERVICE AREA IMPACT === */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .service-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    border-top: 3px solid var(--knowit-green);
+  }
+
+  .service-card:nth-child(2) { border-top-color: var(--knowit-coral); }
+  .service-card:nth-child(3) { border-top-color: var(--knowit-green-muted); }
+  .service-card:nth-child(4) { border-top-color: var(--knowit-coral-light); }
+
+  .service-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--knowit-green);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .service-card-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-card-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-light);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .service-card-list li:last-child {
+    border-bottom: none;
+  }
+
+  .service-card-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--knowit-coral);
+  }
+
+  /* === SOURCES SECTION === */
+  .sources-bar {
+    background: var(--knowit-cream);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-light);
+  }
+
+  .sources-bar p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .source-count {
+    font-weight: 700;
+    color: var(--knowit-green);
+  }
+
+  /* === OUTLOOK === */
+  .outlook {
+    background: linear-gradient(135deg, var(--knowit-green) 0%, var(--knowit-green-light) 100%);
+    border-radius: var(--radius-lg);
+    padding: 32px 36px;
+    margin-bottom: 0;
+  }
+
+  .outlook-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 22px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+
+  .outlook-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .outlook-list li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .outlook-list li:last-child {
+    border-bottom: none;
+  }
+
+  .outlook-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--knowit-coral-light);
+    font-weight: 700;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    background: var(--knowit-green-deep);
+    padding: 36px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-brand {
+    font-size: 18px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .footer-brand span {
+    color: var(--knowit-coral);
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-links {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-links a {
+    color: var(--knowit-coral-light);
+    text-decoration: none;
+  }
+
+  .footer-disclaimer {
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 6px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 640px) {
+    .hero { padding: 32px 24px 36px; }
+    .hero-title { font-size: 28px; }
+    .signal-bar { padding: 16px 24px; flex-direction: column; align-items: flex-start; }
+    .content { padding: 32px 24px; }
+    .dashboard-header, .dashboard-row { grid-template-columns: 1fr; gap: 6px; }
+    .nordic-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-grid { grid-template-columns: 1fr; }
+    .key-data { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-right { text-align: center; }
+    .logo-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero-meta { flex-direction: column; gap: 12px; }
+    .hero-content { flex-direction: column-reverse; }
+    .hero-author { flex-direction: row; gap: 12px; }
+    .author-photo { width: 48px; height: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="email-wrapper">
+
+  <!-- ==================== HERO ==================== -->
+  <div class="hero">
+    <div class="logo-bar">
+      <div class="logo">
+        <div class="logo-mark">knowit<span>.</span></div>
+        <div class="logo-divider"></div>
+        <div class="logo-sub">Insight</div>
+      </div>
+      <div class="logo-right">
+        <div class="lang-selector">
+          <select id="langSelect" onchange="switchLanguage(this.value)">
+            <option value="en" selected>EN</option>
+            <option value="sv">SV</option>
+            <option value="no">NO</option>
+          </select>
+        </div>
+        <div class="issue-badge">Week 13 · 2026</div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">AI & Consulting Intelligence</div>
+        <h1 class="hero-title">The Consulting Pyramid <em>Cracks</em></h1>
+        <p class="hero-subtitle">Agentic AI enters the workforce at scale. Nordic regulation converges. The gap between leaders and laggards becomes measurable.</p>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 12px; font-weight: 500;">By <span style="color: rgba(255,255,255,0.8);">Torbjörn Lindgren</span> · Knowit Insight</p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Period</span>
+            <span class="hero-meta-value">March 23 – 29, 2026</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Active Themes</span>
+            <span class="hero-meta-value">10 tracked scenarios</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Sources Monitored</span>
+            <span class="hero-meta-value">80+ across 10 categories</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-author">
+        <img class="author-photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABgAGADASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAABgcDBAUCAQAI/8QAOBAAAQMDAgMGBAQEBwAAAAAAAQIDBAAFERIhBjFBBxMiUWFxFIGRoSMysfAkQlLBYnKCkqLR4f/EABoBAAIDAQEAAAAAAAAAAAAAAAQFAAEDAgb/xAAiEQACAgICAgIDAAAAAAAAAAAAAQIRAwQhMQUSE0EiI1H/2gAMAwEAAhEDEQA/AE/CuST4HfCqtiO6lYykg1Ql2sEk6cGqaESoispJIrD1/gSphM2BnKdjVth3GyqwYNxSvwueFVaapTLTBcdUAkDPqfas3wdLk12yCMg1M3QQeLMLUGI3gBA1LV1rWsd6kyz+P3DI/lB2z+/OuHNI0WKTCcDUPUVNHdIOhVZ0Way8SlCsKBwRzH1FWwoKHrUUlLozcXHs0k1ImqEd4jwqq2lQqyiQioW/wnsdDUmqonzkBXlUIYUiBz8NZki35z4aNno4OdqpOwxvtWqYPYCyLYBlWNOOtB92lOT3g0wpRCRgJB2OTTQ4miKRYbgtvZQjOEH/AEmlVw20XrgFOpKUEBISBtjr9hXE3xYVrqzWsPCz8iOlx57Ste6QDsKI7b2f3RSXFRrgQsnqTv6VuWJLYcxgJSAAkYplcNstKCfwzn2pTk2J3wegx6+P15QsFWHia0sd+uAl1DfiX8Od1DzOdzVm3XBE+OiWgjS5y/8AaesaNHXqbcZ1DAGMZwaSPHtoZ4W4ilMxiEx5T65DSP6ArBI9grNb68pOXIBt44KPCJtYIyOdSsv7YND7FyChjNWkywdxRouo3O+HnXhcBSRms tuUDtXaZFVZKDJbHpUDkfntWupk5rhTFaAgK8RsITYZ5WjUCwpOPPIx/el3HtTFvnYAKSlAGCrOCB08ufWm5foKpNplMNjKlNkpHmRuP0pX3KN8M82nbU8VvlY5nJHP1GMe1B7MmmkOvGxg8Un92athKivvllSW0HdQbKv05dKKJ3FFxshaULe+GFlKcutoHuQQon6iszgeQloNtuIBSrxeeRmpO0S725LrTERoaUk63lHCAR0peuX0O4Qtdh7O4olRURXLVEfnLko7whABJGcbAkDbn86X3bRIXcbhapimH2HVxFBbbqChSSFnYiijhW7W9rg2JMmKEhpt0Bej8zKVHGvPkMb+hz0qr2usR5T1qejHUgx1j/kD/eiNRv3pgPkcajjbQoW1rbXuTWtDfCgMmqd/ZMRorIrGiXJR5U0q0I0wxDoHI1O08D1oYbuG3iNW49xY6rriix/Kb3qJaKsOrAzWRer5arQwX7pcIsJvop90Iz7A7n5VoBlotilp2rMQYVzhORktIecZWXkJO+NQwSOg/N9DXHEnbZwxBQ63akSbrIAOgob7tnV0ypWDj2FKuzcTTb7xHNnXiQlT8hQUSE4SlOyQlI6JTtt6k1WTA5QboJ1MvplXI4eDWokmLGDzpS2+2tjvEndCuaTVNi13dV5VFuKIr8ckFLjTXIeqSofY1hW6Q/bmpERGSheHGz/QoHO3pRrY75CuLbD/AMSy08CEuoWcKH1pLJODvtHqMUlL7oK4cGU3E+EgQYogoaw5rj6CvUcEJTqOw5knn0rN4lhMtPRLbHypuDHS1k888zn15VrTeJ7VZuHvjTIyHFpabAGrKjnc46AAn2FYFpuVuuwU7BuMacScqLToWc+ZA3ovVxNv5K4FXkc6S+JMDePIIEI7dKX9uhKKkjFNTjlOtso50NWK261o8POmCdIUqRg3SCtmB3gGKA3p0tMlSQs4Bp48UWnRZtWnpSXlRP49wY61eN2d3Ya8VdtHEdzK2rMy1aI52Cxhx8j/ADHZPyHzpbTZEmbJXKmSHZL6zlTjqytR+Zr5vGgEdRmvV7UdGCj0B2URglSSDq55rqI+5FltvoUpJQeY8utSpGMo+Y9RUbqNs1ZQ3+FZbF0ZZjp0syEtBTaFOZUehGDuQdiPemHwTZNTi5ElhgNJ5qcAP0zSFsbEx23NXSIl/voyxhxsb5QMgH2G/qPanJwrxpCc4QEmbJjuT2UkOltGCST4DjqTyyBzpVv6rj+cOmOfHban+qb5X2UO1S8Fzii02a2uBpqGrvSlCggLWshOCTsBpzz23pUXeOId2kLgPEFl9aEOsublIJ0kKTz2xypgMW1+4TFTpjYBnsOkKWQEpSAoAE+exwOu9LSClTTMmMo7sulPyzTHTwvFiUZCvbzxy5pOL4NeHxvf2sMS5Xx7Y2AkjUf93P8AWjDhXj20pdQLlFfiY2K0fiJH03H0NLF1oFlahuU4zUttw82c8wK0lhhLhox92j9EX6bBuPCyZcCQ3IjrSShxByD0/YpDXeSmPMdJHWjPsmU/Ntt7s7az4HkPIB5DUMK++KHuPeFZlvU4+4SoHfYUD6qE3EJhK42gLQopawrYpOD7Gp1p1NaqrvHMdxChpWE5HrjyqxGVrjD2pgDlbc7jmnl612oBTeRyIrlYwrNSN7eHorlURAs7JZzTN5VBkpK2pA0hAWU+LoQRuD60X2S2PO364vqbZS7HjHCCnSQFLUFbkAFQwCD5Uq7K+mHeGHnEhTYWNQJxkdeVOvh9chcwF1MeUlcJxK1Kc1h4tqStBPX8quuK0h0D5VTLyo8WKw1blInJiOtB0p1AasHIOTn8qSf2KUvEERcHjC5Q3NPiSlacDGxTt0HSmuw0t99qJ3XxbYdGmOlzKE605CcnHLcfOljxwhTfFzEhXeDv21JwtWojSopxnrjFWznH2zDjN6lPI9K8tQ0SFoq1FTplrB2ztXEdGm4K22qqNb7DTsOmIi8fONOY7uWSxv56QU/cfejntsSym1OlKQk6aTtgnG33gzmleNiUl1JH+HH/AFTm7XIybjau9ZOULQFpx5EZFAbSUZKQRr2+D//Z" alt="Torbjörn" />
+        <div class="author-name">Torbjörn Lindgren</div>
+        <div class="author-role">Knowit Insight</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SIGNAL BAR ==================== -->
+  <div class="signal-bar">
+    <span class="signal-bar-label">Top Signal</span>
+    <span class="signal-bar-text">McKinsey deploys 25,000 AI agents alongside consultants · Capgemini confirms shift to outcome-based delivery · Sweden's AI strategy now live</span>
+  </div>
+
+  <!-- ==================== CONTENT ==================== -->
+  <div class="content">
+
+    <!-- Executive Summary -->
+    <div class="exec-summary">
+      <span class="section-label">Executive Summary</span>
+      <p>This week marks a turning point: the world's largest consulting firms are no longer experimenting with AI — they're deploying it as workforce. McKinsey now operates with roughly as many AI agents as human consultants. Capgemini publicly confirmed the shift from selling advice to selling outcomes. Meanwhile, Nordic regulation is converging — Sweden's NIS2 Act is live, Norway targets summer 2026 for AI Act implementation, and nearly half of AI Act, NIS2, and GDPR requirements overlap, creating both compliance burden and a clear consulting opportunity. For Knowit Insight Väst, the strategic imperative is clear: the window for positioning as an AI-augmented transformation partner is narrowing.</p>
+    </div>
+
+    <!-- ==================== THEME DASHBOARD ==================== -->
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2 class="section-title">Theme Status Dashboard</h2>
+    </div>
+
+    <!-- Radar Chart -->
+    <div class="radar-container">
+      <div class="radar-title">Signal Strength Overview</div>
+      <svg class="radar-svg" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid rings -->
+        <polygon points="240.0,150.5 269.1,160.0 287.1,184.7 287.1,215.3 269.1,240.0 240.0,249.5 210.9,240.0 192.9,215.3 192.9,184.7 210.9,160.0" fill="none" stroke="#E8E0D6" stroke-width="0.7"/>
+        <polygon points="240.0,101.0 298.2,119.9 334.2,169.4 334.2,230.6 298.2,280.1 240.0,299.0 181.8,280.1 145.8,230.6 145.8,169.4 181.8,119.9" fill="none" stroke="#E8E0D6" stroke-width="0.7"/>
+        <polygon points="240.0,50.0 328.2,78.6 382.7,153.6 382.7,246.4 328.2,321.4 240.0,350.0 151.8,321.4 97.3,246.4 97.3,153.6 151.8,78.6" fill="none" stroke="#E8E0D6" stroke-width="1"/>
+
+        <!-- Axis lines -->
+        <line x1="240" y1="200" x2="240.0" y2="50.0" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="328.2" y2="78.6" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="382.7" y2="153.6" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="382.7" y2="246.4" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="328.2" y2="321.4" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="240.0" y2="350.0" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="151.8" y2="321.4" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="97.3" y2="246.4" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="97.3" y2="153.6" stroke="#E8E0D6" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="151.8" y2="78.6" stroke="#E8E0D6" stroke-width="0.5"/>
+
+        <!-- Data polygon (filled area) -->
+        <polygon points="240.0,50.0 328.2,78.6 382.7,153.6 325.6,227.8 292.9,272.8 240.0,290.0 187.1,272.8 197.2,213.9 197.2,186.1 187.1,127.2" fill="rgba(26,60,52,0.12)" stroke="#1A3C34" stroke-width="2"/>
+
+        <!-- Data dots -->
+        <circle cx="240.0" cy="50.0" r="5" fill="#1A3C34" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="328.2" cy="78.6" r="5" fill="#1A3C34" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="382.7" cy="153.6" r="5" fill="#1A3C34" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="325.6" cy="227.8" r="4" fill="#E8644A" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="292.9" cy="272.8" r="4" fill="#E8644A" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="240.0" cy="290.0" r="4" fill="#E8644A" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="187.1" cy="272.8" r="4" fill="#E8644A" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="197.2" cy="213.9" r="3.5" fill="#E8E0D6" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="197.2" cy="186.1" r="3.5" fill="#E8E0D6" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="187.1" cy="127.2" r="4" fill="#E8644A" stroke="#FFFFFF" stroke-width="2"/>
+
+        <!-- Ring labels -->
+        <text x="243" y="148" font-family="Inter, sans-serif" font-size="8" fill="#BCBCBC" text-anchor="start">weak</text>
+        <text x="243" y="99" font-family="Inter, sans-serif" font-size="8" fill="#BCBCBC" text-anchor="start">moderate</text>
+        <text x="243" y="48" font-family="Inter, sans-serif" font-size="8" fill="#BCBCBC" text-anchor="start">strong</text>
+
+        <!-- Theme labels -->
+        <text x="240" y="16" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="middle">Agentic AI</text>
+        <text x="240" y="28" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="middle">Workforce</text>
+
+        <text x="346" y="52" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="start">Nordic</text>
+        <text x="346" y="64" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="start">Regulation</text>
+
+        <text x="395" y="149" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="start">Leaders vs</text>
+        <text x="395" y="161" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="start">Laggards</text>
+
+        <text x="395" y="252" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="start">CX vs AI</text>
+        <text x="395" y="264" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="start">Backlash</text>
+
+        <text x="340" y="340" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="start">ERP AI</text>
+        <text x="340" y="352" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="start">Agents</text>
+
+        <text x="240" y="376" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="middle">Outcome-Based</text>
+        <text x="240" y="388" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="middle">Consulting</text>
+
+        <text x="140" y="340" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="end">AI Bubble</text>
+        <text x="140" y="352" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="end">Deflation</text>
+
+        <text x="80" y="252" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="end">Nordic AI</text>
+        <text x="80" y="264" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="end">Talent</text>
+
+        <text x="80" y="149" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="end">AI Change</text>
+        <text x="80" y="161" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="end">Mgmt</text>
+
+        <text x="140" y="52" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1A3C34" text-anchor="end">Voice AI</text>
+        <text x="140" y="64" font-family="Inter, sans-serif" font-size="9" fill="#8A8A8A" text-anchor="end">CX</text>
+      </svg>
+
+      <div class="radar-legend">
+        <div class="radar-legend-item"><div class="radar-legend-dot" style="background:#1A3C34;"></div>Strong signal</div>
+        <div class="radar-legend-item"><div class="radar-legend-dot" style="background:#E8644A;"></div>Moderate signal</div>
+        <div class="radar-legend-item"><div class="radar-legend-dot" style="background:#E8E0D6;"></div>Weak signal</div>
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <div class="dashboard-header">
+        <span>Theme</span>
+        <span>Status</span>
+        <span>Signal</span>
+        <span>Trend</span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">Agentic AI Reshaping Consulting Workforce</div>
+          <div class="theme-detail">Strategy & Innovation · Operational Excellence</div>
+        </div>
+        <span class="status-pill status-active">● Active</span>
+        <span class="signal-dot"><span class="dot dot-strong"></span> Strong</span>
+        <span class="trend-arrow trend-up">↑ <span class="trend-label">Rising</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">Nordic AI Regulation Convergence</div>
+          <div class="theme-detail">Business Transformation & Tech</div>
+        </div>
+        <span class="status-pill status-active">● Active</span>
+        <span class="signal-dot"><span class="dot dot-strong"></span> Strong</span>
+        <span class="trend-arrow trend-up-slight">↗ <span class="trend-label">Rising</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">AI Leaders vs Laggards: The Widening Gap</div>
+          <div class="theme-detail">Strategy & Innovation</div>
+        </div>
+        <span class="status-pill status-active">● Active</span>
+        <span class="signal-dot"><span class="dot dot-strong"></span> Strong</span>
+        <span class="trend-arrow trend-stable">→ <span class="trend-label">Stable</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">CX Personalization vs Consumer AI Backlash</div>
+          <div class="theme-detail">Commercial Excellence & CX</div>
+        </div>
+        <span class="status-pill status-emerging">◌ Emerging</span>
+        <span class="signal-dot"><span class="dot dot-moderate"></span> Moderate</span>
+        <span class="trend-arrow trend-up-slight">↗ <span class="trend-label">Rising</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">ERP Vendors Embedding AI Agents</div>
+          <div class="theme-detail">Business Transformation & Tech</div>
+        </div>
+        <span class="status-pill status-active">● Active</span>
+        <span class="signal-dot"><span class="dot dot-moderate"></span> Moderate</span>
+        <span class="trend-arrow trend-stable">→ <span class="trend-label">Stable</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">Outcome-Based Consulting Models</div>
+          <div class="theme-detail">Strategy & Innovation · Operational Excellence</div>
+        </div>
+        <span class="status-pill status-emerging">◌ Emerging</span>
+        <span class="signal-dot"><span class="dot dot-moderate"></span> Moderate</span>
+        <span class="trend-arrow trend-up">↑ <span class="trend-label">Rising</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">AI Bubble Deflation & Economic Impact</div>
+          <div class="theme-detail">Strategy & Innovation</div>
+        </div>
+        <span class="status-pill status-emerging">◌ Emerging</span>
+        <span class="signal-dot"><span class="dot dot-moderate"></span> Moderate</span>
+        <span class="trend-arrow trend-down-slight">↘ <span class="trend-label">Cooling</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">Nordic AI Talent & Hub Competition</div>
+          <div class="theme-detail">Strategy & Innovation · Operational Excellence</div>
+        </div>
+        <span class="status-pill status-emerging">◌ Emerging</span>
+        <span class="signal-dot"><span class="dot dot-weak"></span> Weak</span>
+        <span class="trend-arrow trend-stable">→ <span class="trend-label">Stable</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">AI-Driven Change Management</div>
+          <div class="theme-detail">Operational Excellence</div>
+        </div>
+        <span class="status-pill status-emerging">◌ Emerging</span>
+        <span class="signal-dot"><span class="dot dot-weak"></span> Weak</span>
+        <span class="trend-arrow trend-up-slight">↗ <span class="trend-label">Rising</span></span>
+      </div>
+      <div class="dashboard-row">
+        <div>
+          <div class="theme-name">Voice AI as Strategic CX Channel</div>
+          <div class="theme-detail">Commercial Excellence & CX</div>
+        </div>
+        <span class="status-pill status-emerging">◌ Emerging</span>
+        <span class="signal-dot"><span class="dot dot-moderate"></span> Moderate</span>
+        <span class="trend-arrow trend-stable">→ <span class="trend-label">Stable</span></span>
+      </div>
+    </div>
+
+    <!-- ==================== DEEP DIVES ==================== -->
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2 class="section-title">Deep Dives</h2>
+    </div>
+
+    <!-- Deep Dive 1 -->
+    <div class="deep-dive">
+      <div class="deep-dive-header">
+        <h3 class="deep-dive-title">Agentic AI Enters the Consulting Workforce at Scale</h3>
+        <div class="deep-dive-tags">
+          <span class="tag-green tag">Strategy</span>
+          <span class="tag">OpEx</span>
+        </div>
+      </div>
+      <div class="deep-dive-body">
+        <p>The traditional consulting staffing pyramid — partners at the top, masses of junior analysts at the base — is being fundamentally reshaped. McKinsey now deploys roughly 25,000 AI agents alongside its ~40,000 human consultants, while Accenture has committed $3 billion and plans to double its AI workforce from 40,000 to 80,000. These aren't experimental chatbots; they're autonomous workflow participants handling analytical tasks that previously required junior team members.</p>
+
+        <p>PA Consulting's research on Nordic companies identifies four distinct AI adoption patterns: general task assistants, knowledge agents trained on company data, decision support systems, and autonomous AI agents. Most Nordic firms remain at levels 1–2. The jump to levels 3–4 — where real competitive advantage lies — is precisely where consulting value is highest.</p>
+
+        <div class="key-data">
+          <div class="key-data-item">
+            <div class="key-data-number">25<span class="accent">,</span>000</div>
+            <div class="key-data-label">AI agents deployed at McKinsey alongside 40,000 human consultants</div>
+          </div>
+          <div class="key-data-item">
+            <div class="key-data-number">$3<span class="accent">B</span></div>
+            <div class="key-data-label">Accenture's AI investment, doubling AI workforce to 80,000</div>
+          </div>
+          <div class="key-data-item">
+            <div class="key-data-number">25<span class="accent">%</span></div>
+            <div class="key-data-label">Faster task completion with AI assistance (HBS study)</div>
+          </div>
+          <div class="key-data-item">
+            <div class="key-data-number">40<span class="accent">%+</span></div>
+            <div class="key-data-label">Higher quality output — but only within AI's capability frontier</div>
+          </div>
+        </div>
+
+        <div class="knowit-callout">
+          <div class="knowit-callout-icon">K</div>
+          <p><strong>Implication for Knowit:</strong> Clients will increasingly expect consulting teams augmented by AI agents. PA Consulting's four-level model could frame a Knowit maturity assessment offering. The scale gap with global firms widens unless Nordic boutiques find differentiated AI-augmented delivery models.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive 2 -->
+    <div class="deep-dive">
+      <div class="deep-dive-header">
+        <h3 class="deep-dive-title">Nordic Regulation Converges — Compliance as Opportunity</h3>
+        <div class="deep-dive-tags">
+          <span class="tag-green tag">BizTransform</span>
+          <span class="tag">Nordic</span>
+        </div>
+      </div>
+      <div class="deep-dive-body">
+        <p>Nordic organizations now face four overlapping regulatory frameworks arriving simultaneously: the EU AI Act, NIS2, GDPR, and ISO 42001. Analysis shows nearly half of the requirements across these frameworks overlap — yet most organizations still approach them as separate compliance workstreams. This fragmented approach creates redundant effort and audit fatigue, opening a clear lane for consulting firms that can offer integrated regulatory frameworks.</p>
+
+        <p>The timelines differ meaningfully across the region: Denmark has had full NIS2 compliance mandatory since July 2025, giving Danish experience a head start. Sweden's NIS2 Act entered force in January 2026. Norway targets summer 2026 for AI Act implementation. These staggered timelines mean cross-border lessons transfer — a firm advising across the Nordics has a structural advantage.</p>
+
+        <div class="knowit-callout">
+          <div class="knowit-callout-icon">K</div>
+          <p><strong>Implication for Knowit:</strong> A unified "regulatory integration assessment" offering could address multiple client needs at once. Sweden's new national AI Strategy (Feb 2026) creates institutional legitimacy — reference it in proposals to help clients secure internal budgets. Danish NIS2 experience directly informs Swedish implementations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive 3 -->
+    <div class="deep-dive">
+      <div class="deep-dive-header">
+        <h3 class="deep-dive-title">The Outcome Economy: Consulting's Business Model Shift</h3>
+        <div class="deep-dive-tags">
+          <span class="tag">Strategy</span>
+          <span class="tag-green tag">OpEx</span>
+        </div>
+      </div>
+      <div class="deep-dive-body">
+        <p>Capgemini's strategy chief publicly stated this week that the consulting model is shifting from selling technology and advice to selling outcomes. This echoes what MIT Sloan's Davenport and Bean flagged as a key 2026 trend: generative AI becoming an organizational resource rather than an individual tool. When AI is organizational, consulting must deliver organization-level outcomes — not person-hours.</p>
+
+        <p>Meanwhile, Davenport and Bean also rank AI bubble deflation as their #1 trend for 2026, warning of economic hits as overhyped valuations correct. This creates a paradox: clients need pragmatic AI guidance more than ever, but budgets may tighten. Firms positioned as "outcome partners" rather than "AI evangelists" will weather this correction best.</p>
+
+        <div class="knowit-callout">
+          <div class="knowit-callout-icon">K</div>
+          <p><strong>Implication for Knowit:</strong> Time to evaluate which engagements could be repriced around outcomes rather than hours. The Operational Excellence practice could lead internal transformation toward outcome-based delivery. Position as "pragmatic AI" to survive potential budget scrutiny.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== NORDIC COMPARISON ==================== -->
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2 class="section-title">Nordic Regional View</h2>
+    </div>
+
+    <div class="nordic-grid">
+      <div class="nordic-card">
+        <div class="nordic-flag">🇸🇪</div>
+        <div class="nordic-city">Stockholm</div>
+        <div class="nordic-detail">NIS2 live since Jan 2026. National AI Strategy adopted Feb 2026. Dense consulting market.</div>
+        <span class="nordic-highlight">NIS2 Live</span>
+      </div>
+      <div class="nordic-card">
+        <div class="nordic-flag">🇸🇪</div>
+        <div class="nordic-city">Göteborg</div>
+        <div class="nordic-detail">AI Sweden HQ. Red Hat AI hands-on event April 13–17. Knowit Insight home base.</div>
+        <span class="nordic-highlight">AI Hub</span>
+      </div>
+      <div class="nordic-card">
+        <div class="nordic-flag">🇳🇴</div>
+        <div class="nordic-city">Oslo</div>
+        <div class="nordic-detail">AI Act targeted summer 2026. Nkom as supervisor. Pre-compliance advisory window open.</div>
+        <span class="nordic-highlight">Pre-Compliance</span>
+      </div>
+      <div class="nordic-card">
+        <div class="nordic-flag">🇸🇪</div>
+        <div class="nordic-city">Malmö</div>
+        <div class="nordic-detail">Danish-Swedish bridge. Can leverage Denmark's NIS2 head start for Swedish implementations.</div>
+        <span class="nordic-highlight">Cross-Border</span>
+      </div>
+      <div class="nordic-card">
+        <div class="nordic-flag">🇫🇮</div>
+        <div class="nordic-city">Helsinki</div>
+        <div class="nordic-detail">Nordic AI Center in preparation. Strong public sector AI adoption. Monitoring.</div>
+        <span class="nordic-highlight">Monitoring</span>
+      </div>
+    </div>
+
+    <!-- ==================== SERVICE AREAS ==================== -->
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2 class="section-title">Impact by Service Area</h2>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-card-title">Strategy & Innovation</div>
+        <ul class="service-card-list">
+          <li>Agentic AI creates strategic urgency — the leader-laggard gap is now measurable (HBS: 25% faster, 40% higher quality)</li>
+          <li>Sweden's AI Strategy provides institutional backing for AI investment proposals</li>
+          <li>AI bubble deflation risk demands "pragmatic AI" positioning over hype</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-title">Commercial Excellence & CX</div>
+        <ul class="service-card-list">
+          <li>90%+ of CX GenAI projects struggling for ROI — pilot-to-production advisory opportunity</li>
+          <li>Agentic AI collapsing sales/service divide — clients need function redesign help</li>
+          <li>Voice AI hitting sub-800ms latency — new CX channel to evaluate</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-title">Business Transformation & Tech</div>
+        <ul class="service-card-list">
+          <li>Gartner: 40% of enterprise apps will have AI agents by end of 2026 (up from &lt;5%)</li>
+          <li>NIS2 + AI Act + GDPR overlap creates integrated compliance consulting demand</li>
+          <li>ERP implementations becoming AI-orchestration projects, not just configuration</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-title">Operational Excellence</div>
+        <ul class="service-card-list">
+          <li>Enterprise agile transformation market at $57.8B (18.5% CAGR) — AI accelerating demand</li>
+          <li>MIT Sloan: organizational learning is the key to AI impact, not technology alone</li>
+          <li>Human-agent tension management emerging as new consulting competency</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== SOURCES ==================== -->
+    <div class="sources-bar">
+      <span class="section-label">Sources</span>
+      <p><span class="source-count">80+ sources</span> monitored across 10 categories, including: MIT Sloan Management Review, Harvard Business School, CB Insights, McKinsey, BCG, Accenture, Capgemini, Gartner, Forrester, PA Consulting, CX Dive, CMSWire, AI Sweden, Nordic Innovation, Swedish Government, Twoday Nordic AI Governance, Enterprise Ireland, Fortune, and Consultancy.eu. Full source list maintained separately. New sources are added continuously by following references in articles.</p>
+    </div>
+
+    <!-- ==================== OUTLOOK ==================== -->
+    <div class="outlook">
+      <span class="section-label" style="color: var(--knowit-coral-light);">Outlook</span>
+      <h3 class="outlook-title">What to Watch Next Week</h3>
+      <ul class="outlook-list">
+        <li>Track responses to Capgemini's outcome-based consulting statement — will other firms follow?</li>
+        <li>Monitor for SAP, Microsoft, and Oracle AI agent announcements at spring events</li>
+        <li>Watch for Swedish NIS2 supervision authority appointment</li>
+        <li>Follow up on Nordic AI Center development timeline</li>
+        <li>Track whether AI bubble deflation signals appear in Nordic VC/startup data</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-brand">knowit<span>.</span> insight</div>
+      <div class="footer-tagline">Transformations, from start to finish</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="https://www.knowit.eu/">knowit.eu</a> · Insight
+      </div>
+      <div class="footer-disclaimer">AI & Consulting Intelligence · Confidential · Week 13, 2026</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const translations = {
+  en: {
+    eyebrow: "AI & Consulting Intelligence",
+    title: 'The Consulting Pyramid <em>Cracks</em>',
+    subtitle: "Agentic AI enters the workforce at scale. Nordic regulation converges. The gap between leaders and laggards becomes measurable.",
+    byline: 'By <span style="color: rgba(255,255,255,0.8);">Torbjörn Lindgren</span> · Knowit Insight',
+    topSignalLabel: "Top Signal",
+    topSignal: "McKinsey deploys 25,000 AI agents alongside consultants · Capgemini confirms shift to outcome-based delivery · Sweden\u2019s AI strategy now live",
+    execLabel: "Executive Summary",
+    execText: "This week marks a turning point: the world\u2019s largest consulting firms are no longer experimenting with AI \u2014 they\u2019re deploying it as workforce. McKinsey now operates with roughly as many AI agents as human consultants. Capgemini publicly confirmed the shift from selling advice to selling outcomes. Meanwhile, Nordic regulation is converging \u2014 Sweden\u2019s NIS2 Act is live, Norway targets summer 2026 for AI Act implementation, and nearly half of AI Act, NIS2, and GDPR requirements overlap, creating both compliance burden and a clear consulting opportunity. For Knowit Insight, the strategic imperative is clear: the window for positioning as an AI-augmented transformation partner is narrowing.",
+    sec1: "Theme Status Dashboard",
+    sec2: "Deep Dives",
+    sec3: "Nordic Regional View",
+    sec4: "Impact by Service Area",
+    sourcesLabel: "Sources",
+    outlookLabel: "Outlook",
+    outlookTitle: "What to Watch Next Week",
+    period: "Period",
+    periodVal: "March 23 \u2013 29, 2026",
+    themes: "Active Themes",
+    themesVal: "10 tracked scenarios",
+    sources: "Sources Monitored",
+    sourcesVal: "80+ across 10 categories",
+    footerTag: "Transformations, from start to finish",
+    footerDisclaimer: "AI & Consulting Intelligence · Confidential · Week 13, 2026"
+  },
+  sv: {
+    eyebrow: "AI & Konsultbranschens Omvandling",
+    title: 'Konsultpyramiden <em>Spricker</em>',
+    subtitle: "Agentisk AI tar plats i arbetsstyrkan p\u00e5 bred front. Nordisk reglering konvergerar. Klyftan mellan ledare och eftersl\u00e4ntare blir m\u00e4tbar.",
+    byline: 'Av <span style="color: rgba(255,255,255,0.8);">Torbjörn Lindgren</span> · Knowit Insight',
+    topSignalLabel: "Viktigaste Signal",
+    topSignal: "McKinsey anv\u00e4nder 25 000 AI-agenter j\u00e4msides med konsulter · Capgemini bekr\u00e4ftar skifte till resultatbaserad leverans · Sveriges AI-strategi \u00e4r nu aktiv",
+    execLabel: "Sammanfattning",
+    execText: "Denna vecka markerar en v\u00e4ndpunkt: v\u00e4rldens st\u00f6rsta konsultf\u00f6retag experimenterar inte l\u00e4ngre med AI \u2014 de anv\u00e4nder det som arbetskraft. McKinsey har nu ungef\u00e4r lika m\u00e5nga AI-agenter som m\u00e4nskliga konsulter. Capgemini bekr\u00e4ftade offentligt skiftet fr\u00e5n att s\u00e4lja r\u00e5dgivning till att s\u00e4lja resultat. Samtidigt konvergerar nordisk reglering \u2014 Sveriges NIS2 \u00e4r aktiv, Norge siktar p\u00e5 sommaren 2026 f\u00f6r AI Act-implementering, och n\u00e4rmare h\u00e4lften av AI Act, NIS2 och GDPR-kraven \u00f6verlappar. F\u00f6r Knowit Insight \u00e4r det strategiska imperativet tydligt: f\u00f6nstret f\u00f6r att positionera sig som en AI-f\u00f6rst\u00e4rkt transformationspartner krymper.",
+    sec1: "Temastatus \u00d6versikt",
+    sec2: "F\u00f6rdjupningar",
+    sec3: "Nordisk Regional Vy",
+    sec4: "P\u00e5verkan per Tj\u00e4nsteomr\u00e5de",
+    sourcesLabel: "K\u00e4llor",
+    outlookLabel: "Utblick",
+    outlookTitle: "Att Bevaka N\u00e4sta Vecka",
+    period: "Period",
+    periodVal: "23\u201329 mars, 2026",
+    themes: "Aktiva Teman",
+    themesVal: "10 bevakade scenarier",
+    sources: "Bevakade K\u00e4llor",
+    sourcesVal: "\u00d6ver 80 i 10 kategorier",
+    footerTag: "Transformationer, fr\u00e5n start till m\u00e5l",
+    footerDisclaimer: "AI & Konsultbranschens Omvandling · Konfidentiellt · Vecka 13, 2026"
+  },
+  no: {
+    eyebrow: "AI & Konsulentbransjens Omvandling",
+    title: 'Konsulentpyramiden <em>Sprekker</em>',
+    subtitle: "Agentisk AI tar plass i arbeidsstyrken i stor skala. Nordisk regulering konvergerer. Gapet mellom ledere og ettern\u00f8lere blir m\u00e5lbart.",
+    byline: 'Av <span style="color: rgba(255,255,255,0.8);">Torbjörn Lindgren</span> · Knowit Insight',
+    topSignalLabel: "Toppsingal",
+    topSignal: "McKinsey bruker 25 000 AI-agenter ved siden av konsulenter · Capgemini bekrefter skiftet til resultatbasert levering · Sveriges AI-strategi er n\u00e5 aktiv",
+    execLabel: "Sammendrag",
+    execText: "Denne uken markerer et vendepunkt: verdens st\u00f8rste konsulentselskaper eksperimenterer ikke lenger med AI \u2014 de bruker det som arbeidskraft. McKinsey opererer n\u00e5 med omtrent like mange AI-agenter som menneskelige konsulenter. Capgemini bekreftet offentlig skiftet fra \u00e5 selge r\u00e5dgivning til \u00e5 selge resultater. Samtidig konvergerer nordisk regulering \u2014 Sveriges NIS2 er aktiv, Norge sikter p\u00e5 sommeren 2026 for AI Act-implementering, og nesten halvparten av AI Act, NIS2 og GDPR-kravene overlapper. For Knowit Insight er det strategiske imperativet tydelig: vinduet for \u00e5 posisjonere seg som en AI-forsterket transformasjonspartner krymper.",
+    sec1: "Temastatus Oversikt",
+    sec2: "Dykk",
+    sec3: "Nordisk Regional Oversikt",
+    sec4: "P\u00e5virkning per Tjenesteomr\u00e5de",
+    sourcesLabel: "Kilder",
+    outlookLabel: "Utsikter",
+    outlookTitle: "Hva \u00c5 F\u00f8lge Med P\u00e5 Neste Uke",
+    period: "Periode",
+    periodVal: "23.\u201329. mars, 2026",
+    themes: "Aktive Temaer",
+    themesVal: "10 overv\u00e5kede scenarier",
+    sources: "Overv\u00e5kede Kilder",
+    sourcesVal: "Over 80 i 10 kategorier",
+    footerTag: "Transformasjoner, fra start til m\u00e5l",
+    footerDisclaimer: "AI & Konsulentbransjens Omvandling · Konfidensielt · Uke 13, 2026"
+  }
+};
+
+function switchLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  // Hero section
+  const eyebrow = document.querySelector('.hero-eyebrow');
+  const title = document.querySelector('.hero-title');
+  const subtitle = document.querySelector('.hero-subtitle');
+  const byline = subtitle.nextElementSibling;
+  if (eyebrow) eyebrow.textContent = t.eyebrow;
+  if (title) title.innerHTML = t.title;
+  if (subtitle) subtitle.textContent = t.subtitle;
+  if (byline) byline.innerHTML = t.byline;
+
+  // Signal bar
+  const sigLabel = document.querySelector('.signal-bar-label');
+  const sigText = document.querySelector('.signal-bar-text');
+  if (sigLabel) sigLabel.textContent = t.topSignalLabel;
+  if (sigText) sigText.textContent = t.topSignal;
+
+  // Executive summary
+  const execLabels = document.querySelectorAll('.section-label');
+  const execP = document.querySelector('.exec-summary p:last-child');
+  if (execLabels[0]) execLabels[0].textContent = t.execLabel;
+  if (execP) execP.textContent = t.execText;
+
+  // Section headers
+  const sectionTitles = document.querySelectorAll('.section-title');
+  if (sectionTitles[0]) sectionTitles[0].textContent = t.sec1;
+  if (sectionTitles[1]) sectionTitles[1].textContent = t.sec2;
+  if (sectionTitles[2]) sectionTitles[2].textContent = t.sec3;
+  if (sectionTitles[3]) sectionTitles[3].textContent = t.sec4;
+
+  // Hero meta
+  const metaLabels = document.querySelectorAll('.hero-meta-label');
+  const metaValues = document.querySelectorAll('.hero-meta-value');
+  if (metaLabels[0]) metaLabels[0].textContent = t.period;
+  if (metaLabels[1]) metaLabels[1].textContent = t.themes;
+  if (metaLabels[2]) metaLabels[2].textContent = t.sources;
+  if (metaValues[0]) metaValues[0].textContent = t.periodVal;
+  if (metaValues[1]) metaValues[1].textContent = t.themesVal;
+  if (metaValues[2]) metaValues[2].textContent = t.sourcesVal;
+
+  // Sources & Outlook labels
+  const sourcesLabel = document.querySelector('.sources-bar .section-label');
+  if (sourcesLabel) sourcesLabel.textContent = t.sourcesLabel;
+  const outlookLabel = document.querySelector('.outlook .section-label');
+  if (outlookLabel) outlookLabel.textContent = t.outlookLabel;
+  const outlookTitle = document.querySelector('.outlook-title');
+  if (outlookTitle) outlookTitle.textContent = t.outlookTitle;
+
+  // Footer
+  const footerTag = document.querySelector('.footer-tagline');
+  const footerDisc = document.querySelector('.footer-disclaimer');
+  if (footerTag) footerTag.textContent = t.footerTag;
+  if (footerDisc) footerDisc.textContent = t.footerDisclaimer;
+}
+</script>
+</body>
+</html>

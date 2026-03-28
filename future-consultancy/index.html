@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowit Insight &mdash; AI & Consulting Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1A3C34;
+    --green-deep: #0F2820;
+    --green-light: #2A5C4E;
+    --coral: #E8644A;
+    --coral-light: #F0856E;
+    --warm: #FAF8F5;
+    --cream: #F2EFEB;
+    --sand: #E8E0D6;
+    --sidebar-w: 280px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--cream); color: #1A1A1A; }
+
+  /* --- Layout --- */
+  .layout { display: flex; height: 100vh; }
+
+  /* --- Sidebar --- */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 22px; font-weight: 400; color: #fff;
+  }
+  .logo span { color: rgba(255,255,255,0.5); }
+  .sidebar-header p {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--coral); margin-top: 6px;
+  }
+
+  .sidebar-nav {
+    flex: 1; overflow-y: auto; padding: 8px 0;
+  }
+  .sidebar-nav::-webkit-scrollbar { width: 4px; }
+  .sidebar-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+
+  .nav-section {
+    padding: 16px 24px 8px;
+  }
+  .nav-section-title {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 8px 24px;
+    font-size: 13px; font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-link:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    border-left-color: rgba(232,100,74,0.4);
+  }
+  .nav-link.active {
+    color: #fff;
+    background: rgba(232,100,74,0.1);
+    border-left-color: var(--coral);
+    font-weight: 600;
+  }
+
+  .nav-empty {
+    display: block;
+    padding: 8px 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    font-style: italic;
+  }
+
+  .sidebar-footer {
+    padding: 16px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 11px; color: rgba(255,255,255,0.3);
+  }
+  .sidebar-footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .sidebar-footer a:hover { color: var(--coral-light); }
+
+  /* --- Main content --- */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 48px;
+    min-height: 48px;
+    background: var(--green-deep);
+    border-bottom: 3px solid var(--coral);
+  }
+  .topbar-title {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--coral);
+  }
+  .topbar-link a {
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+  .topbar-link a:hover { color: var(--coral-light); }
+
+  .report-frame {
+    flex: 1;
+    border: none;
+    width: 100%;
+    background: var(--warm);
+  }
+
+  /* --- Mobile toggle --- */
+  .sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 12px; left: 12px;
+    z-index: 1000;
+    width: 40px; height: 40px;
+    background: var(--green);
+    border: none; border-radius: 8px;
+    cursor: pointer;
+    align-items: center; justify-content: center;
+  }
+  .sidebar-toggle span {
+    display: block; width: 20px; height: 2px;
+    background: #fff; border-radius: 1px;
+    margin: 4px auto;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      left: -280px;
+      top: 0; bottom: 0;
+      z-index: 999;
+      transition: left 0.25s ease;
+    }
+    .sidebar.open { left: 0; }
+    .sidebar-toggle { display: flex; }
+    .layout { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle navigation">
+  <span></span><span></span><span></span>
+</button>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">knowit<span>.</span> Insight</div>
+      <p>Intelligence Archive</p>
+    </div>
+
+    <div class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Weekly Reports</div>
+        <a class="nav-link" href="#" data-src="reports/weekly/2026-W13.html" title="Week 13, 2026 &mdash; The Consulting Pyramid Cracks">Week 13, 2026 &mdash; The Consulting Pyramid Cracks</a>
+
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Daily Briefs</div>
+        <a class="nav-link" href="#" data-src="reports/daily/2026-03-28-email.html" title="Sat, 28 Mar 2026">Sat, 28 Mar 2026</a>
+
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      &copy; 2026 Knowit Insight V&auml;st<br>
+      <a href="https://www.knowit.se">knowit.se</a>
+    </div>
+  </nav>
+
+  <!-- Main content area -->
+  <div class="main">
+    <div class="topbar">
+      <span class="topbar-title" id="current-label">Latest Weekly Report</span>
+      <span class="topbar-link"><a href="reports/weekly/2026-W13.html" target="_blank" id="open-link">Open in new tab &#8599;</a></span>
+    </div>
+    <iframe class="report-frame" id="report-frame" src="reports/weekly/2026-W13.html"></iframe>
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const src = this.getAttribute('data-src');
+    document.getElementById('report-frame').src = src;
+    document.getElementById('current-label').textContent = this.title;
+    document.getElementById('open-link').href = src;
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    // Close sidebar on mobile
+    document.querySelector('.sidebar').classList.remove('open');
+  });
+});
+// Mark first link as active on load
+const firstLink = document.querySelector('.nav-link[data-src="reports/weekly/2026-W13.html"]');
+if (firstLink) firstLink.classList.add('active');
+</script>
+
+</body>
+</html>

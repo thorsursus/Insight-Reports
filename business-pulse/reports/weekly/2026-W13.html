@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Pulse — Veckorapport V13 2026 | Knowit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f8f6;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #005F4B 0%, #003d36 100%);
+            color: white;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .logo-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+            margin-bottom: 12px;
+            color: #b0e5dc;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .meta {
+            display: flex;
+            gap: 30px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Signal Bar */
+        .signal-bar {
+            background: #005F4B;
+            color: white;
+            padding: 16px 40px;
+            font-size: 14px;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .signal-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            opacity: 0.85;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #005F4B;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #005F4B;
+            display: inline-block;
+        }
+
+        /* Demand Map Table */
+        .demand-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 95, 75, 0.08);
+        }
+
+        .demand-table th {
+            background: #005F4B;
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .demand-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e8e8e6;
+            font-size: 14px;
+        }
+
+        .demand-table tr:hover {
+            background: #f8f8f6;
+        }
+
+        .direction-up {
+            color: #005F4B;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .direction-down {
+            color: #d32f2f;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .direction-stable {
+            color: #f57c00;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .direction-uncertain {
+            color: #7b1fa2;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Signal Cards */
+        .signal-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .signal-card {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 95, 75, 0.06);
+            border-left: 5px solid #005F4B;
+        }
+
+        .signal-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .signal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f5f2;
+            color: #005F4B;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .signal-body {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .knowit-callout {
+            background: #e8f5f2;
+            border-left: 4px solid #005F4B;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+
+        .knowit-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #005F4B;
+            margin-bottom: 6px;
+        }
+
+        .knowit-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .source-ref {
+            font-size: 12px;
+            color: #666;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Service Area Cards */
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .service-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 95, 75, 0.06);
+        }
+
+        .service-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #005F4B;
+            margin-bottom: 12px;
+        }
+
+        .service-direction {
+            font-size: 18px;
+            font-weight: 700;
+            color: #005F4B;
+            margin-bottom: 12px;
+        }
+
+        .service-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-bullets li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .service-bullets li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #005F4B;
+            font-weight: 700;
+        }
+
+        /* Opportunity Table */
+        .opportunity-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 95, 75, 0.08);
+        }
+
+        .opportunity-table th {
+            background: #005F4B;
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .opportunity-table td {
+            padding: 14px;
+            border-bottom: 1px solid #e8e8e6;
+            font-size: 13px;
+        }
+
+        .status-new {
+            background: #c8e6c9;
+            color: #1b5e20;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .status-active {
+            background: #bbdefb;
+            color: #0d47a1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .status-watch {
+            background: #ffe0b2;
+            color: #e65100;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        /* Warning Cards */
+        .warning-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .warning-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 5px solid #ff6b47;
+            box-shadow: 0 2px 12px rgba(255, 107, 71, 0.08);
+        }
+
+        .warning-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-bottom: 12px;
+        }
+
+        .warning-body {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Strategic Box */
+        .strategic-box {
+            background: #e8f5f2;
+            border-left: 6px solid #005F4B;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .strategic-subsection {
+            margin-bottom: 28px;
+        }
+
+        .strategic-subsection:last-child {
+            margin-bottom: 0;
+        }
+
+        .strategic-subtitle {
+            font-size: 15px;
+            font-weight: 700;
+            color: #005F4B;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .strategic-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .strategic-bullets li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .strategic-bullets li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #005F4B;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            background: #005F4B;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-text {
+            margin-bottom: 8px;
+        }
+
+        .footer-meta {
+            opacity: 0.8;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="logo-badge">
+                    <span style="font-size: 24px;">knowit.</span>
+                    <span style="font-size: 16px;">Business Pulse</span>
+                    <span class="badge">Vecka 13 &middot; 2026</span>
+                </div>
+                <div class="eyebrow">Veckorapport — V&auml;stsverige</div>
+                <h1>Omst&auml;llning &amp; tillv&auml;xt — infrastruktur och transformering skapar ett&aring;ttkomplett l&auml;ge</h1>
+                <div class="hero-subtitle">V&auml;stsverige st&aring;r i ett &ouml;verginskede mellan industriell omstrukturering och ny tillv&auml;xt. Infrastructure-investeringar i hamn, j&auml;rnv&auml;g och logistik accelererar parallellt med transformationsbehov i offentlig sektor IT och automotive-branschen. Denna kombination &ouml;ppnar konkreta aff&auml;rsm&ouml;jligheter f&ouml;r r&aring;dgivningsf&ouml;retag nu.</div>
+                <div class="meta">
+                    <div class="meta-item">
+                        <strong>Periode:</strong> 23–28 mars 2026
+                    </div>
+                    <div class="meta-item">
+                        <strong>Signaler identifierade:</strong> 14 stycken
+                    </div>
+                    <div class="meta-item">
+                        <strong>K&auml;llor monitorerade:</strong> 24 aktiva + 8 kandidater
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signal Bar -->
+        <div class="signal-bar">
+            <div class="signal-label">Veckans toppignaler</div>
+            <strong>VGR modular healthcare IT overhaul accelerating</strong> &bull; <strong>AI Gothenburg hub launches with NVIDIA partnership</strong> &bull; <strong>Gothenburg Port record year and strategic rail expansion</strong> &bull; <strong>Green hydrogen &amp; climate funding surge (Klimatklivet SEK 4.5B)</strong>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Section 1: Demand Map -->
+            <div class="section">
+                <h2 class="section-title">Efterfr&aring;gekartan per segment</h2>
+                <table class="demand-table">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Riktning</th>
+                            <th>Efterfr&aring;getyp</th>
+                            <th>Momentum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fordon &amp; Automotive</strong></td>
+                            <td><span class="direction-down">↓</span></td>
+                            <td>Effektivitet / &Ouml;versättning</td>
+                            <td>Avtagande</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tillverkning</strong></td>
+                            <td><span class="direction-stable">→</span></td>
+                            <td>Effektivitet (automatisering)</td>
+                            <td>Stabilt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bygg &amp; Infrastruktur</strong></td>
+                            <td><span class="direction-up">↑</span></td>
+                            <td>Tillv&auml;xt (investeringar)</td>
+                            <td>Accelererande</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Offentlig sektor IT</strong></td>
+                            <td><span class="direction-up">↑↑</span></td>
+                            <td>Transformering</td>
+                            <td>Accelererande</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tech &amp; Tj&auml;nster</strong></td>
+                            <td><span class="direction-up">↑</span></td>
+                            <td>Tillv&auml;xt / Effektivitet</td>
+                            <td>Stabilt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logistik &amp; Transport</strong></td>
+                            <td><span class="direction-up">↑</span></td>
+                            <td>Tillv&auml;xt &amp; Digitalisering</td>
+                            <td>Accelererande</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Energi &amp; Gr&ouml;n teknik</strong></td>
+                            <td><span class="direction-uncertain">?</span></td>
+                            <td>&Ouml;verg&aring;ng / Ompositionering</td>
+                            <td>Volatilt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Life Science</strong></td>
+                            <td><span class="direction-stable">→</span></td>
+                            <td>Tillv&auml;xt (klusterutveckling)</td>
+                            <td>Stabilt</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 2: Key Events -->
+            <div class="section">
+                <h2 class="section-title">Veckans nyckelhändelser &amp; djupanalys</h2>
+
+                <div class="signal-cards">
+                    <!-- Signal 1: VGR Healthcare IT -->
+                    <div class="signal-card">
+                        <div class="signal-card-title">VGR &ouml;verger Millennium, modul&auml;r IT-arkitektur accelererar</div>
+                        <div class="signal-tags">
+                            <span class="tag">Offentlig sektor IT</span>
+                            <span class="tag">Business Transformation</span>
+                            <span class="tag">Arkitektur &amp; Integration</span>
+                        </div>
+                        <div class="signal-body">V&auml;stra G&ouml;talandsregionen har slutligen fastat beslut om att f&ouml;rkasta Oracle/Cerner Millennium-implementeringen och &ouml;verga till en modul&auml;r arkitektur f&ouml;r sitt nya v&aring;rdadministrativa system. Denna strategiska pivot &ouml;ppnar omedelbar tillfrågning f&ouml;r arkitektur-r&aring;dgivning, systemintegration och change management. Leverant&ouml;rsavtal f&ouml;r äldre system (AsynjaVisph) upph&ouml;r 2026. <strong>Omf&aring;ng:</strong> Miljardprojekt med procurements redan i early planning fase.</div>
+                        <div class="knowit-callout">
+                            <div class="knowit-label">Knowit Relevans</div>
+                            <div class="knowit-text">Direkt aff&auml;rsm&ouml;jlighet f&ouml;r Strategisk IT-r&aring;dgivning, systemarkitektur och integrationsdesign. Knowit b&ouml;r redan nu positionera sig f&ouml;r early advisory contracts i Q2–Q3 2026.</div>
+                        </div>
+                        <div class="source-ref"><strong>K&auml;lla:</strong> VGRfokus, NLT (2026-03)</div>
+                    </div>
+
+                    <!-- Signal 2: AI Gothenburg NVIDIA -->
+                    <div class="signal-card">
+                        <div class="signal-card-title">AI Gothenburg lanseras med NVIDIA som teknikpartner</div>
+                        <div class="signal-tags">
+                            <span class="tag">Tech &amp; Innovation</span>
+                            <span class="tag">Ekosystemutveckling</span>
+                            <span class="tag">AI/Machine Learning</span>
+                        </div>
+                        <div class="signal-body">Sverige lanserar AI Gothenburg, en offentlig-privat hub designad f&ouml;r att g&ouml;ra G&ouml;teborg till nordisk centrum f&ouml;r att bygga och skala AI-drivna f&ouml;retag. NVIDIA &auml;r teknikpartner. Huben riktar sig till early-stage grundare och fokuserar p&aring; sektorer d&auml;r G&ouml;teborg redan har industriell styrka: mobilitet, energi, h&auml;lsov&aring;rd, tillverkning och sj&ouml;fart.</div>
+                        <div class="knowit-callout">
+                            <div class="knowit-label">Knowit Relevans</div>
+                            <div class="knowit-text">M&ouml;jlighet f&ouml;r AI-strategir&aring;dgivning, ekosystemutveckling och transformation-engagemang n&auml;r etablerade f&ouml;retag accelererar AI-adoption. Knowit kan positionera sig som enabler f&ouml;r b&aring;de startups och corporate partners.</div>
+                        </div>
+                        <div class="source-ref"><strong>K&auml;lla:</strong> Business Region G&ouml;teborg / Cision (2026-03-28)</div>
+                    </div>
+
+                    <!-- Signal 3: Gothenburg Port -->
+                    <div class="signal-card">
+                        <div class="signal-card-title">G&ouml;teborgs Hamn s&auml;tter rekord — Skandiaporten och j&auml;rnv&auml;gsutvidgning accelererar</div>
+                        <div class="signal-tags">
+                            <span class="tag">Logistik</span>
+                            <span class="tag">Infrastruktur</span>
+                            <span class="tag">Digitalisering</span>
+                        </div>
+                        <div class="signal-body">G&ouml;teborgs Hamn rapporterar rekordar 2025 med 934 000 TEU (4% &ouml;kning). Skandiaporten-utbyggnaden p&aring;b&ouml;rjas augusti 2026: 4-meters djup&ouml;kning, 700m ny kaj, EIB-kofinansiering SEK 850M. Ny j&auml;rnv&auml;gspendeltj&auml;nst mellan Helsingborg och hamn startad mars 2026. APM Terminals opererar nu container-shuttle med 529 000 TEU/&aring;r per j&auml;rnv&auml;g.</div>
+                        <div class="knowit-callout">
+                            <div class="knowit-label">Knowit Relevans</div>
+                            <div class="knowit-text">Terminal-operatörer och logistikleverant&ouml;rer beh&ouml;ver digitalisering av terminaloperationer, supply chain visibility och operativ effektivitet. Knowit b&ouml;r investera i logistik-domänkompetens.</div>
+                        </div>
+                        <div class="source-ref"><strong>K&auml;lla:</strong> Dagens Infrastruktur, Dagens Logistik, G&ouml;teborgs Hamn (2026-03)</div>
+                    </div>
+
+                    <!-- Signal 4: Klimatklivet Funding -->
+                    <div class="signal-card">
+                        <div class="signal-card-title">Klimatklivet f&ouml;rdubblar budget — SEK 4,5B f&ouml;r klimatinvesteringar 2026</div>
+                        <div class="signal-tags">
+                            <span class="tag">Energi &amp; Gr&ouml;n teknik</span>
+                            <span class="tag">H&aring;llbarhet</span>
+                            <span class="tag">Aff&auml;rsmodeller</span>
+                        </div>
+                        <div class="signal-body">Klimatklivet har SEK 4,5 miljarder tillg&auml;ngliga 2026 — betydligt mer &auml;n tidigare år — med fem ansökningsomg&aring;ngar. V&auml;stra G&ouml;taland såg rekordsökningar 2025. Biogas Nordo&ouml;stra Skaraborg AB mottog SEK 299M i Klimatklivet-st&ouml;d, största granterna någonsin f&ouml;r landsbyggdsprojekt.</div>
+                        <div class="knowit-callout">
+                            <div class="knowit-label">Knowit Relevans</div>
+                            <div class="knowit-text">Industriella och jordbruksföretag som söker Klimatklivet-medel beh&ouml;ver h&aring;llbarhetsstr ategi, gröna aff&auml;rsmodeller och digital rapportering av klimatpåverkan.</div>
+                        </div>
+                        <div class="source-ref"><strong>K&auml;lla:</strong> L&auml;nsstyrelsen V&auml;stra G&ouml;taland, Klimatklivet (2026-03)</div>
+                    </div>
+
+                    <!-- Signal 5: Hydrogen Valley -->
+                    <div class="signal-card">
+                        <div class="signal-card-title">Hydrogen Valley EU-projekt: V&auml;stsverige i f&ouml;rgrunden f&ouml;r grön v&auml;te</div>
+                        <div class="signal-tags">
+                            <span class="tag">Energi &amp; Gr&ouml;n teknik</span>
+                            <span class="tag">Life Science &amp; Industri</span>
+                            <span class="tag">EU-finansiering</span>
+                        </div>
+                        <div class="signal-body">"High Coast to West Coast Hydrogen Valley" är ett EU-finansierat projekt (Horizon Europe via Clean Hydrogen Partnership) som utvecklar v&auml;teproduktionsv&auml;rdekedjan i V&auml;sternorrland och V&auml;stsverige. 45 partners från industri, forskning och offentlig sektor. Mål: minst 4 000 ton grönt väte före 2030. Hydrogen Solutions AS planerar väte-elektrolysor på G&ouml;teborgs Hamn.</div>
+                        <div class="knowit-callout">
+                            <div class="knowit-label">Knowit Relevans</div>
+                            <div class="knowit-text">Grön väte kräver ny process-automation, industriell IoT och supply chain-digitalisering. Industri 4.0-kompetens är kritisk.</div>
+                        </div>
+                        <div class="source-ref"><strong>K&auml;lla:</strong> RISE, EU Horizon Europe (2026-03)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Service Area Shifts -->
+            <div class="section">
+                <h2 class="section-title">Tj&auml;nsteomr&aring;denas efterfr&agem&ouml;rkning</h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="service-card-title">Strategi &amp; Innovation</div>
+                        <div class="service-direction">↑↑</div>
+                        <ul class="service-bullets">
+                            <li>VGR modul&auml;r IT-strategi</li>
+                            <li>AI Gothenburg positioning &amp; ecosystem</li>
+                            <li>Gr&ouml;n v&auml;te och Klimatklivet-strategi</li>
+                            <li>Automotive transition pathways</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-title">Business Transformation &amp; Tech</div>
+                        <div class="service-direction">↑↑</div>
+                        <ul class="service-bullets">
+                            <li>VGR healthcare system integration</li>
+                            <li>Volvo Cars post-restructuring processes</li>
+                            <li>SKF automation &amp; IoT enablement</li>
+                            <li>Port digitalization &amp; terminal ops</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-title">Commercial Excellence &amp; CX</div>
+                        <div class="service-direction">→</div>
+                        <ul class="service-bullets">
+                            <li>Logistics sector digitalization</li>
+                            <li>Port customer experience &amp; visibility</li>
+                            <li>Automotive supplier adaptation</li>
+                            <li>Steady B2B digital engagement</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-title">Operational Excellence</div>
+                        <div class="service-direction">↑</div>
+                        <ul class="service-bullets">
+                            <li>SKF production efficiency &amp; Industry 4.0</li>
+                            <li>Terminal operations optimization</li>
+                            <li>Green energy operational cost reduction</li>
+                            <li>Automotive cost restructuring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Coverage & Gaps -->
+            <div class="section">
+                <h2 class="section-title">T&auml;ckning &amp; luckor — Knowits positioner</h2>
+                <table class="opportunity-table">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Knowit Position</th>
+                            <th>Status</th>
+                            <th>Kommentar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Offentlig sektor IT</strong></td>
+                            <td>Stark t&auml;ckning</td>
+                            <td><span class="status-active">AKTIV</span></td>
+                            <td>VGR healthcare — direkt opportunity. Procurements börjar Q2 2026.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logistik &amp; Transport</strong></td>
+                            <td>Partiell t&auml;ckning</td>
+                            <td><span class="status-new">NYT</span></td>
+                            <td>Port expansion kräver logistics-domänkompetens &amp; supply chain IT.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fordon &amp; Automotive</strong></td>
+                            <td>Partiell t&auml;ckning</td>
+                            <td><span class="status-active">FÖRSVARA</span></td>
+                            <td>Volvo-omstruktureringen skapar effektivitets-behov. Risk för budget-nedskar.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tillverkning &amp; Industri 4.0</strong></td>
+                            <td>Svag t&auml;ckning</td>
+                            <td><span class="status-watch">BYGGA</span></td>
+                            <td>SKF automation och grön väte kräver OT-kunskap och industriell IoT.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tech &amp; Innovation</strong></td>
+                            <td>Stark t&auml;ckning</td>
+                            <td><span class="status-active">AKTIV</span></td>
+                            <td>AI Gothenburg &amp; Lindholmen ecosystem — bra möjligheter.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 5: New Opportunities -->
+            <div class="section">
+                <h2 class="section-title">Nya aff&auml;rsm&ouml;jligheter denna vecka</h2>
+                <table class="opportunity-table">
+                    <thead>
+                        <tr>
+                            <th>M&ouml;jlighet</th>
+                            <th>Segment</th>
+                            <th>Tj&auml;nsteomr&aring;de</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>VGR modular healthcare IT — architecture &amp; integration</strong></td>
+                            <td>Offentlig sektor IT</td>
+                            <td>Business Transformation &amp; Tech, Strategy &amp; Innovation</td>
+                            <td><span class="status-new">NYT</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>G&ouml;teborg Port digitalization — terminal ops &amp; supply chain</strong></td>
+                            <td>Logistik</td>
+                            <td>Business Transformation &amp; Tech, Operational Excellence</td>
+                            <td><span class="status-new">NYT</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Gothenburg hub — strategy &amp; ecosystem enablement</strong></td>
+                            <td>Tech &amp; Innovation</td>
+                            <td>Strategy &amp; Innovation, Business Transformation &amp; Tech</td>
+                            <td><span class="status-new">NYT</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Klimatklivet applicant support — sustainability roadmaps</strong></td>
+                            <td>Energi &amp; Gr&ouml;n teknik, Industri</td>
+                            <td>Strategy &amp; Innovation, Operational Excellence</td>
+                            <td><span class="status-new">NYT</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 6: Early Warnings -->
+            <div class="section">
+                <h2 class="section-title">Tidiga varningssignaler — värd att &ouml;vervaka</h2>
+
+                <div class="warning-cards">
+                    <div class="warning-card">
+                        <div class="warning-title">⚠ Volvo Cars — continued instability and cost pressure</div>
+                        <div class="warning-body"><strong>Signal:</strong> Volvo Cars announced 3,000 additional job cuts (1,200 in Swedish operations) in early 2026 to execute an 18-billion-kronor cost restructuring by 2026. Product development and design roles are shifting to China. While this has been largely executed, continued restructuring announcements may reduce budget availability for consulting.</div>
+                    </div>
+
+                    <div class="warning-card">
+                        <div class="warning-title">⚠ V&auml;stra G&ouml;taland varsel — rising trend</div>
+                        <div class="warning-body"><strong>Signal:</strong> V&auml;stra G&ouml;taland received 1,828 layoff notices in recent months — 1,213 more than the same period in 2025 (67% increase YoY). Manufacturing, basic industries, and construction are hit hardest. While this can increase demand for restructuring consulting, it also signals broader economic weakness.</div>
+                    </div>
+
+                    <div class="warning-card">
+                        <div class="warning-title">⚠ Novo Energy — still hibernated, strategic clarity delayed</div>
+                        <div class="warning-body"><strong>Signal:</strong> Volvo Cars' battery gigafactory remains in hibernation after failing to find a technology partner. Expected to employ 3,000 if revived. While Novo Energy creates the largest potential upside for regional transformation consulting, there is no clarity on timing or revival probability.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Strategic Implications -->
+            <div class="section">
+                <h2 class="section-title">Strategiska implikationer f&ouml;r Knowit</h2>
+                <div class="strategic-box">
+                    <div class="strategic-subsection">
+                        <div class="strategic-subtitle">Satsa — D&auml;r vi ska f&ouml;ra anfall</div>
+                        <ul class="strategic-bullets">
+                            <li><strong>VGR healthcare IT modul&auml;r transformation.</strong> Position aggressively for architecture, integration, and change management work. Procurement cycles start Q2 2026.</li>
+                            <li><strong>Gothenburg Port digitalization ecosystem.</strong> With SEK 2.8B flowing into infrastructure, terminal and logistics operators will need supply chain IT and operational efficiency solutions.</li>
+                            <li><strong>AI Gothenburg hub positioning.</strong> Offer AI strategy, ecosystem enablement, and corporate-to-startup bridging services.</li>
+                            <li><strong>Klimatklivet &amp; green transition advisory.</strong> Industrial and agricultural applicants need sustainability strategy and climate roadmaps.</li>
+                        </ul>
+                    </div>
+
+                    <div class="strategic-subsection">
+                        <div class="strategic-subtitle">F&ouml;rsvara — D&auml;r vi ska bevara st&auml;llning</div>
+                        <ul class="strategic-bullets">
+                            <li><strong>Automotive sector relationships.</strong> Volvo's restructuring is reducing budgets. Ensure current engagements are retained.</li>
+                            <li><strong>Tech &amp; startup ecosystem relationships.</strong> Lindholmen and The Yard are strong Knowit footholds.</li>
+                            <li><strong>Existing public sector clients.</strong> VGR transformation offers cross-selling opportunities.</li>
+                        </ul>
+                    </div>
+
+                    <div class="strategic-subsection">
+                        <div class="strategic-subtitle">Bygg kapacitet — D&auml;r vi behöver förstärka</div>
+                        <ul class="strategic-bullets">
+                            <li><strong>Healthcare IT domain expertise.</strong> Consider partnerships with health IT specialists or targeted hiring.</li>
+                            <li><strong>Industrial IoT &amp; Industry 4.0 capabilities.</strong> SKF's automation investment signals growing demand.</li>
+                            <li><strong>Logistics &amp; supply chain IT.</strong> Port expansion requires specialized knowledge in terminal operations.</li>
+                            <li><strong>Green energy &amp; sustainability advisory.</strong> Hydrogen Valley and Klimatklivet demand energy transition expertise.</li>
+                        </ul>
+                    </div>
+
+                    <div class="strategic-subsection">
+                        <div class="strategic-subtitle">Timing är kritisk — Actioner nästa två veckor</div>
+                        <ul class="strategic-bullets">
+                            <li><strong>Week 14:</strong> Initiate dialogue with VGR procurement team for early advisory contracts.</li>
+                            <li><strong>Week 14–15:</strong> Engage Gothenburg Port and major terminal operators on digitalization roadmaps.</li>
+                            <li><strong>Week 15:</strong> Position Knowit for AI Gothenburg hub partnership.</li>
+                            <li><strong>Q2 2026:</strong> Launch Klimatklivet applicant advisory service.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text"><strong>knowit.</strong> Business Pulse — V&auml;stsverige</div>
+            <div class="footer-meta">Rapport genererad: 28 mars 2026 | K&auml;llor: 24 aktiva + 8 kandidater | Next scan: 4 april 2026</div>
+        </div>
+    </div>
+</body>
+</html>
